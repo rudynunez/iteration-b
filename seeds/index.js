@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const cities = require('./cities');
-const { places, descriptors } = require('./seedHelpers');
-const Room = require('../models/room-model');
+const rooms = require('./rooms');
+
+const Room = require('../models/roomModel');
 
 // mongoose connection
 main().catch(err => console.log(err));
@@ -10,18 +10,19 @@ async function main() {
   console.log('Mongoose CONNECTED');
 };
 
-const sample = (array) => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
     await Room.deleteMany({});
-    for(let i = 0; i < 50; i++){
-        const random1000 = Math.floor(Math.random() * 1000);
-        const camp = new Room({
-           location: `${cities[random1000].city}, ${cities[random1000].state}`,
-           title: `${sample(descriptors)} ${sample(places)}` 
-        })
-        await camp.save();
-    }
+    
+    
+    const room = new Room({
+        nodeId: rooms[0].nodeId,
+        title: rooms[0].title,
+        location: rooms[0].location,
+        players: rooms[0].players
+    })
+    await room.save();
+    
 };
 
 seedDB().then(() => {
