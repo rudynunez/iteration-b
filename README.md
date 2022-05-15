@@ -1,1 +1,1 @@
-### My ambitious fullstack CYOA game ###
+### Day 1 Yelp Camp ###
