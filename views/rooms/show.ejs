@@ -1,4 +1,19 @@
 <% layout('/layouts/boilerplate') %>
     <h1><%= room.title %> </h1>
-    <h2><%= room.location %></h2>
+    <h2><%= room.description %></h2>
+    <h3>Players present: <%= room.players %></h3>
+    <h3>nodeId: <%= room.nodeId %></h3>
+    <h3>Number of zones: <%= room.zones %></h3>
+    <h3>Grid location: <%= room.location %></h2>
+    <p>
+        <a href="/rooms/<%= room._id %>/edit">Edit</a>
+    </p>
+    <p>
+        <form action="/rooms/<%= room._id %>?_method=DELETE" method="POST">
+            <button>DELETE</button>
+        </form>
+    </p>
+    <footer>
+        
+    </footer>
     <a href="/rooms">All Rooms</a>

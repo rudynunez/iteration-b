@@ -53,8 +53,25 @@ app.get('/rooms/:id/edit', async (req, res) => {
     res.render('rooms/edit', { room });
 });
 
+app.put('/rooms/:id', async (req, res) => {
+    const { id } = req.params;
+    const room = await Room.findByIdAndUpdate(id, {...req.body.room });
+    res.redirect(`/rooms/${ room._id }`);
+});
+
+// DELETE
+app.delete('/rooms/:id', async (req, res) => {
+    const { id } = req.params;
+    const room = await Room.findByIdAndDelete(id);
+    res.redirect('/rooms');
+});
 
 
-app.listen(3011, () => {
-    console.log("Serving on Port 3011")
+
+
+
+
+
+app.listen(3002, () => {
+    console.log("Serving on Port 3002")
 });
