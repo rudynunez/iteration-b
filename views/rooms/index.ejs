@@ -1,11 +1,11 @@
 <% layout('/layouts/boilerplate') %>
     <h1>All Rooms</h1>
     <div>
-        <a href="/rooms/new">Add Room</a>
+        <a href="/rooms/new" class="link-light text-white-50" >Add Room</a>
     </div>
     <ul>
         <% for (let room of rooms) { %> 
-            <li><a href="/rooms/<%= room.id %>"><%= room.title %></a></li>
+            <li><a href="/rooms/<%= room.id %>" class="link-light text-white-50"><%= room.title %></a></li>
         <% } %> 
     </ul>
     
