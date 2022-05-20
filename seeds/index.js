@@ -6,23 +6,37 @@ const Room = require('../models/roomModel');
 // mongoose connection
 main().catch(err => console.log(err));
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/game');
-  console.log('Mongoose CONNECTED');
+    await mongoose.connect('mongodb://localhost:27017/game');
+    console.log('Mongoose CONNECTED');
 };
 
 
 const seedDB = async () => {
     await Room.deleteMany({});
+
+    // Olde schooley
     
-    
-    const room = new Room({
-        nodeId: rooms[0].nodeId,
-        title: rooms[0].title,
-        location: rooms[0].location,
-        players: rooms[0].players
-    })
-    await room.save();
-    
+    // for(let i = 0; i < rooms.count; i++) {
+    //     const newRoom = new Room({
+    //         nodeId: rooms[i].nodeId,
+    //         title: rooms[i].title,
+    //         location: rooms[i].location,
+    //         players: rooms[i].players
+    //     })
+    //     await newRoom.save();
+    // }  
+     
+    for (let room of rooms) {
+
+        const newRoom = new Room({
+            nodeId: room.nodeId,
+            title: room.title,
+            description: room.description,
+            location: room.location,
+            players: room.players
+        })
+        await newRoom.save();
+    }
 };
 
 seedDB().then(() => {

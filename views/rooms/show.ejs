@@ -1,7 +1,7 @@
 <% layout('/layouts/boilerplate') %>
-    <h1><%= room.title %> </h1>
+    <h1><%= room.title %></h1>
     <h2><%= room.description %></h2>
-    <h3>Players present: <%= room.players %></h3>
+    <h3>Players present: <%= room.players[0] %></h3>
     <h3>nodeId: <%= room.nodeId %></h3>
     <h3>Number of zones: <%= room.zones %></h3>
     <h3>Grid location: <%= room.location %></h2>
