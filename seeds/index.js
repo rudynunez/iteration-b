@@ -33,7 +33,8 @@ const seedDB = async () => {
             title: room.title,
             description: room.description,
             location: room.location,
-            players: room.players
+            player_name: room.players.player_name,
+            player_id: room.players.player_id
         })
         await newRoom.save();
     }
