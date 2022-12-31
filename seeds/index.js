@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const rooms = require('./rooms');
+const players = require('./players');
 
 const Room = require('../models/roomModel');
+
+const Player = require('../models/roomModel')
 
 // mongoose connection
 main().catch(err => console.log(err));
@@ -13,7 +16,7 @@ async function main() {
 
 const seedDB = async () => {
     await Room.deleteMany({});
-
+    await Player.deleteMany({});
     // Olde schooley
     
     // for(let i = 0; i < rooms.count; i++) {
@@ -33,10 +36,23 @@ const seedDB = async () => {
             title: room.title,
             description: room.description,
             location: room.location,
-            player_name: room.players.player_name,
-            player_id: room.players.player_id
+            
         })
         await newRoom.save();
+    }
+
+    for (let player of players) {
+
+        const newPlayer = new Player({
+            location: player.location,
+            title: player.title,
+            description: player.description,
+            player_name: player.player_name,
+            player_id: player.player_id,
+            player_inventory: player.player_inventory,
+            
+        })
+        await newPlayer.save();
     }
 };
 
