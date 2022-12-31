@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const Room = require('./models/roomModel');
+const Player = require('./models/playerModel');
 
 // mongoose connection
 main().catch(err => console.log(err));
