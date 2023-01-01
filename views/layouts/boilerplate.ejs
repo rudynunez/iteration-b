@@ -11,10 +11,12 @@
 <body class="bg-dark text-light">
     <style></style>
     <nav class="navbar fixed-bottom navbar-dark bg-dark">
-        <form class="container-fluid">
+        <form action="/" method="POST" class="container-fluid">
           <div class="input-group">
             <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="What is your will?" aria-label="Command Prompt" aria-describedby="basic-addon1">
+            <label for="nodeId">nodeId</label>
+            <input type="text" id="nodeId" name="room[nodeId]">
+            <input type="text" class="form-control" id="cmd_id" name="cmd[cmd_id]" placeholder="What is your will?" aria-label="Command Prompt" aria-describedby="basic-addon1">
           </div>
         </form>
       </nav>
