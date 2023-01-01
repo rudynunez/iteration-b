@@ -29,6 +29,7 @@
 //         player_id: '227dcj18a64318avdf8e0733'
 //     }]
 // }]
+const playersData = require('./playersData.js');
 
 module.exports = [
     {
@@ -62,4 +63,12 @@ module.exports = [
         players: []
         }
 
-]
+];
+
+// Extract player data and add it to the players array of the first room
+const player = playersData.find(player => player.player_name === 'Daft Bennie');
+// const itemTitle = player.player_inventory[0].item_title;
+// module.exports[0].players.push(itemTitle);
+
+const playerName = player.player_name;
+module.exports[0].players.push(playerName);
