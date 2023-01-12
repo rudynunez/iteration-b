@@ -1,0 +1,24 @@
+{
+
+"rooms": [{
+    "id": 0,
+    "name": "",
+    "exits": [null, 0, 0, 0, 0, 0, 0]
+}, {
+    "id": 1,
+    "name": "room 1",
+    "desc": "A dusty green room.",
+    "exits": [null, 2, 0, 0, 0, 0, 0]
+}, {
+    "id": 2,
+    "name": "room 2",
+    "desc": "An ochre yellow room.",
+    "exits": [null, 3, 0, 0, 2, 0, 0]
+}, {
+    "id": 3,
+    "name": "room 3",
+    "desc": "A mournful blue room.",
+    "exits": [null, 0, 0, 0, 3, 0, 0]
+}]
+
+}

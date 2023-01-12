@@ -15,6 +15,8 @@ async function main() {
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
